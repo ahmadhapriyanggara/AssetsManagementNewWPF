@@ -15,12 +15,24 @@ namespace Dashboard1.Models
         public int Id { get; set; }
         public string Serial_Number { get; set; }
         public string Condition { get; set; }
+<<<<<<< HEAD
         [ForeignKey("Item")]
         public int Item_Id { get; set; }
         public Item Item { get; set; }
         [ForeignKey("Supplier")]
         public int Supplier_Id { get; set; }
         public Supplier Supplier { get; set; }
+=======
+
+        [ForeignKey("Item")]
+        public int Item_Id { get; set; }
+        public Item Item { get; set; }
+
+        [ForeignKey("Supplier")]
+        public int Supplier_Id { get; set; }
+        public Supplier Supplier { get; set; }
+
+>>>>>>> bc496322409ddae4f899ebef5a4ec045ec0f8d96
         public bool isDeleted { get; set; }
         public ICollection<Item_Loan> Item_Loans { get; set; }
         
