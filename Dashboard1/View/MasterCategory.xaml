@@ -117,9 +117,9 @@
                     <Grid Grid.Row="0" Grid.RowSpan="3" Grid.ColumnSpan="3" HorizontalAlignment="Center" Width="797" Margin="10,10,0,10">
                         <Grid Background="White" Margin="20 20 20 20">
                             <Grid.OpacityMask>
-                                <VisualBrush Visual="{ Binding ElementName=BorderG1 }"/>
+                                <VisualBrush Visual="{ Binding ElementName=CategoryBorderG1 }"/>
                             </Grid.OpacityMask>
-                            <Border x:Name="BorderG1" CornerRadius="5" Background="White"/>
+                            <Border x:Name="CategoryBorderG1" CornerRadius="5" Background="White"/>
                             <StackPanel Orientation="Vertical">
                                 <Grid Width="757" Height="70" VerticalAlignment="Top">
                                     <Grid Width="35" Height="50" Background="#FFFFAF24" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="20 0">
@@ -147,9 +147,9 @@
                                                     <TextBox Margin="15" Style="{StaticResource MaterialDesignFloatingHintTextBox}" materialDesign:HintAssist.Hint="Category Name" Name="CategoryTextBox"></TextBox>
                                                 </StackPanel>
                                                 <StackPanel Orientation="Vertical">
-                                                    <Button Margin="35 20 35 0" Content="ADD DATA" Background="#FF1A477E" Name="AddData"></Button>
-                                                    <Button Margin="35 20 35 0" Content="UPDATE DATA" Background="#FF1A477E" Name="UpdateData"></Button>
-                                                    <Button Margin="35 20 35 0" Content="DELETE DATA" Background="#FF1A477E" Name="DeleteData"></Button>
+                                                    <Button Margin="35 20 35 0" Content="ADD DATA" Background="#FF1A477E" Name="AddDataCategory" Click="AddDataCategory_Click"></Button>
+                                                    <Button Margin="35 20 35 0" Content="UPDATE DATA" Background="#FF1A477E" Name="UpdateDataCategory" Click="UpdateDataCategory_Click"></Button>
+                                                    <Button Margin="35 20 35 0" Content="DELETE DATA" Background="#FF1A477E" Name="DeleteDataCategory" Click="DeleteDataCategory_Click"></Button>
                                                 </StackPanel>
                                             </StackPanel>
                                         </StackPanel>
@@ -157,10 +157,6 @@
                                 </Grid>
                                 
                             </StackPanel>
-                            
-                            
-                            
-                            
                             
                         </Grid>
                     </Grid>
@@ -188,7 +184,7 @@
             </Grid>
 
             <StackPanel Grid.Row="1">
-                <Button Margin="10" Background="#FF769CCF" BorderBrush="#FF769CCF" Click="Button_Click">
+                <Button Margin="10" Background="#FF769CCF" BorderBrush="#FF769CCF" Click="CategoryDashboard">
                     <Grid Width="150">
                         <materialDesign:PackIcon Kind="ViewDashboard" VerticalAlignment="Center"/>
                         <TextBlock HorizontalAlignment="Center" Text="DASHBOARD" FontFamily="Champagne &amp; Limousines"/>
@@ -209,14 +205,14 @@
                     </Grid>
                 </Button>
 
-                <Button Margin="10" Background="#FF769CCF" BorderBrush="#FF769CCF" Click="Button_Click_1">
+                <Button Margin="10" Background="#FF769CCF" BorderBrush="#FF769CCF" Click="CategoryItem">
                     <Grid Width="150">
                         <materialDesign:PackIcon Kind="Store" VerticalAlignment="Center"/>
                         <TextBlock HorizontalAlignment="Center" Text="ITEM" FontFamily="Champagne &amp; Limousines"/>
                     </Grid>
                 </Button>
 
-                <Button Margin="10" Background="#FF769CCF" BorderBrush="#FF769CCF" Click="Button_Click">
+                <Button Margin="10" Background="#FF769CCF" BorderBrush="#FF769CCF" Click="CategoryCategory">
                     <Grid Width="150">
                         <materialDesign:PackIcon Kind="Category" VerticalAlignment="Center"/>
                         <TextBlock HorizontalAlignment="Center" Text="ITEM CATEGORY" FontFamily="Champagne &amp; Limousines"/>
@@ -232,7 +228,7 @@
             </StackPanel>
         </Grid>
 
-        <Grid x:Name="GridBarraTitulo" Grid.ColumnSpan="2" Background="#FF769CCF" MouseDown="GridBarraTitulo_MouseDown">
+        <Grid x:Name="GridBarIconCategory" Grid.ColumnSpan="2" Background="#FF769CCF" MouseDown="GridBarIconCategory_MouseDown">
             <StackPanel Orientation="Horizontal" HorizontalAlignment="Right" Margin="10,0">
                 <Button Style="{StaticResource MaterialDesignFloatingActionMiniAccentButton}" Width="25" Height="25" Background="{x:Null}" BorderBrush="{x:Null}" Foreground="White">
                     <materialDesign:PackIcon Kind="Bell"/>
@@ -240,7 +236,7 @@
                 <Button Style="{StaticResource MaterialDesignFloatingActionMiniAccentButton}" Width="25" Height="25" Background="{x:Null}" BorderBrush="{x:Null}" Foreground="White">
                     <materialDesign:PackIcon Kind="Account"/>
                 </Button>
-                <Button x:Name="ButtonFechar" Style="{StaticResource MaterialDesignFloatingActionMiniAccentButton}" Width="25" Height="25" Background="{x:Null}" BorderBrush="{x:Null}" Foreground="White" Click="ButtonFechar_Click">
+                <Button x:Name="ButtonPowerCategory2" Style="{StaticResource MaterialDesignFloatingActionMiniAccentButton}" Width="25" Height="25" Background="{x:Null}" BorderBrush="{x:Null}" Foreground="White" Click="ButtonPowerCategory">
                     <materialDesign:PackIcon Kind="Power"/>
                 </Button>
             </StackPanel>

@@ -4,17 +4,17 @@
 winexe
 C#
 .cs
-E:\Apps\Xampp\htdocs\Belajar C#\Dashboard1\Dashboard1\obj\Debug\
+E:\Apps\Xampp\htdocs\Belajar C#\AssetsManagementNewWPF\Dashboard1\obj\Debug\
 Dashboard1
 none
 false
 DEBUG;TRACE
-E:\Apps\Xampp\htdocs\Belajar C#\Dashboard1\Dashboard1\App.xaml
-3-71143159
+E:\Apps\Xampp\htdocs\Belajar C#\AssetsManagementNewWPF\Dashboard1\App.xaml
+72100381128
 
-111211927388
-19-1333307970
-View\Dashboard.xaml;View\Item.xaml;View\MasterCategory.xaml;
+29-2088021635
+77131427557
+View\Dashboard.xaml;View\ForgotPassword.xaml;View\Item.xaml;View\Login.xaml;View\MasterCategory.xaml;View\Supplier.xaml;View\UpdateAssets.xaml;
 
 False
 

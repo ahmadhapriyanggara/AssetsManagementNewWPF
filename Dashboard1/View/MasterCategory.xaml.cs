@@ -41,29 +41,51 @@ namespace Dashboard1.View
             grid.ItemsSource = items;
         }
 
-        private void ButtonFechar_Click(object sender, RoutedEventArgs e)
+        private void ButtonPowerCategory(object sender, RoutedEventArgs e)
         {
             Application.Current.Shutdown();
         }
 
-        private void GridBarraTitulo_MouseDown(object sender, MouseButtonEventArgs e)
+        private void GridBarIconCategory_MouseDown(object sender, MouseButtonEventArgs e)
         {
             DragMove();
         }
 
-        private void Button_Click(object sender, RoutedEventArgs e)
-        {
-            this.Hide();
-            MainWindow NewDashboard = new MainWindow();
-            NewDashboard.Show();
-
-        }
-
-        private void Button_Click_1(object sender, RoutedEventArgs e)
+        private void CategoryItem(object sender, RoutedEventArgs e)
         {
             this.Hide();
             Item item = new Item();
             item.Show();
+        }
+
+        private void CategoryDashboard(object sender, RoutedEventArgs e)
+        {
+            this.Hide();
+            Dashboard dashboard = new Dashboard();
+            dashboard.Show();
+        }
+
+        private void CategoryCategory(object sender, RoutedEventArgs e)
+        {
+            this.Hide();
+            MasterCategory category = new MasterCategory();
+            category.Show();
+        }
+
+
+        private void AddDataCategory_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void UpdateDataCategory_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void DeleteDataCategory_Click(object sender, RoutedEventArgs e)
+        {
+
         }
     }
 

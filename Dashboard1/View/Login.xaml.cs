@@ -1,5 +1,5 @@
-﻿using AssetManagement.Controller;
-using AssetManagement.View;
+﻿using Dashboard1.Controller;
+using Dashboard1.View;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -15,7 +15,7 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 
-namespace AssetManagement
+namespace Dashboard1.View
 {
     /// <summary>
     /// Interaction logic for MainWindow.xaml
