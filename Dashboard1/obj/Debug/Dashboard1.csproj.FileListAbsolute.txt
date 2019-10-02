@@ -1,0 +1,42 @@
+D:\GIT\Dashboard1\Dashboard1\bin\Debug\Dashboard1.exe.config
+D:\GIT\Dashboard1\Dashboard1\bin\Debug\Dashboard1.exe
+D:\GIT\Dashboard1\Dashboard1\bin\Debug\Dashboard1.pdb
+D:\GIT\Dashboard1\Dashboard1\bin\Debug\MaterialDesignColors.dll
+D:\GIT\Dashboard1\Dashboard1\bin\Debug\MaterialDesignThemes.Wpf.dll
+D:\GIT\Dashboard1\Dashboard1\bin\Debug\MaterialDesignThemes.Wpf.pdb
+D:\GIT\Dashboard1\Dashboard1\bin\Debug\MaterialDesignThemes.Wpf.xml
+D:\GIT\Dashboard1\Dashboard1\obj\Debug\Dashboard1.csprojResolveAssemblyReference.cache
+D:\GIT\Dashboard1\Dashboard1\obj\Debug\MainWindow.g.cs
+D:\GIT\Dashboard1\Dashboard1\obj\Debug\App.g.cs
+D:\GIT\Dashboard1\Dashboard1\obj\Debug\Dashboard1_MarkupCompile.cache
+D:\GIT\Dashboard1\Dashboard1\obj\Debug\Dashboard1_MarkupCompile.lref
+D:\GIT\Dashboard1\Dashboard1\obj\Debug\MainWindow.baml
+D:\GIT\Dashboard1\Dashboard1\obj\Debug\Dashboard1.g.resources
+D:\GIT\Dashboard1\Dashboard1\obj\Debug\Dashboard1.Properties.Resources.resources
+D:\GIT\Dashboard1\Dashboard1\obj\Debug\Dashboard1.csproj.GenerateResource.Cache
+D:\GIT\Dashboard1\Dashboard1\obj\Debug\Dashboard1.csproj.CoreCompileInputs.cache
+D:\GIT\Dashboard1\Dashboard1\obj\Debug\Dashboard1.exe
+D:\GIT\Dashboard1\Dashboard1\obj\Debug\Dashboard1.pdb
+D:\GIT\Dashboard1\Dashboard1\obj\Debug\App.baml
+D:\GIT\Dashboard1\Dashboard1\bin\Debug\De.TorstenMandelkow.MetroChart.dll
+E:\Apps\Xampp\htdocs\Belajar C#\Dashboard1\Dashboard1\bin\Debug\Dashboard1.exe.config
+E:\Apps\Xampp\htdocs\Belajar C#\Dashboard1\Dashboard1\bin\Debug\Dashboard1.exe
+E:\Apps\Xampp\htdocs\Belajar C#\Dashboard1\Dashboard1\bin\Debug\Dashboard1.pdb
+E:\Apps\Xampp\htdocs\Belajar C#\Dashboard1\Dashboard1\bin\Debug\De.TorstenMandelkow.MetroChart.dll
+E:\Apps\Xampp\htdocs\Belajar C#\Dashboard1\Dashboard1\bin\Debug\MaterialDesignColors.dll
+E:\Apps\Xampp\htdocs\Belajar C#\Dashboard1\Dashboard1\bin\Debug\MaterialDesignThemes.Wpf.dll
+E:\Apps\Xampp\htdocs\Belajar C#\Dashboard1\Dashboard1\bin\Debug\MaterialDesignColors.pdb
+E:\Apps\Xampp\htdocs\Belajar C#\Dashboard1\Dashboard1\bin\Debug\MaterialDesignThemes.Wpf.pdb
+E:\Apps\Xampp\htdocs\Belajar C#\Dashboard1\Dashboard1\bin\Debug\MaterialDesignThemes.Wpf.xml
+E:\Apps\Xampp\htdocs\Belajar C#\Dashboard1\Dashboard1\obj\Debug\App.g.cs
+E:\Apps\Xampp\htdocs\Belajar C#\Dashboard1\Dashboard1\obj\Debug\Dashboard1_MarkupCompile.cache
+E:\Apps\Xampp\htdocs\Belajar C#\Dashboard1\Dashboard1\obj\Debug\Dashboard1_MarkupCompile.lref
+E:\Apps\Xampp\htdocs\Belajar C#\Dashboard1\Dashboard1\obj\Debug\App.baml
+E:\Apps\Xampp\htdocs\Belajar C#\Dashboard1\Dashboard1\obj\Debug\Dashboard1.g.resources
+E:\Apps\Xampp\htdocs\Belajar C#\Dashboard1\Dashboard1\obj\Debug\Dashboard1.Properties.Resources.resources
+E:\Apps\Xampp\htdocs\Belajar C#\Dashboard1\Dashboard1\obj\Debug\Dashboard1.csproj.GenerateResource.Cache
+E:\Apps\Xampp\htdocs\Belajar C#\Dashboard1\Dashboard1\obj\Debug\Dashboard1.exe
+E:\Apps\Xampp\htdocs\Belajar C#\Dashboard1\Dashboard1\obj\Debug\Dashboard1.pdb
+E:\Apps\Xampp\htdocs\Belajar C#\Dashboard1\Dashboard1\obj\Debug\Dashboard1.csprojResolveAssemblyReference.cache
+E:\Apps\Xampp\htdocs\Belajar C#\Dashboard1\Dashboard1\obj\Debug\View\Dashboard.g.cs
+E:\Apps\Xampp\htdocs\Belajar C#\Dashboard1\Dashboard1\obj\Debug\View\Dashboard.baml

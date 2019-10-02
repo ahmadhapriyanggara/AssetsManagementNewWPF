@@ -1,0 +1,259 @@
+﻿<Window x:Class="Dashboard1.View.Item"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Dashboard1"
+        xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+        xmlns:MetroChart="clr-namespace:De.TorstenMandelkow.MetroChart;assembly=De.TorstenMandelkow.MetroChart"
+        mc:Ignorable="d" Height="600" Width="1024" ResizeMode="NoResize" WindowStartupLocation="CenterScreen" WindowStyle="None">
+
+    <Window.Resources>
+        <ResourceDictionary>
+            <Style x:Key="ScrollThumbs" TargetType="{x:Type Thumb}">
+                <Setter Property="Template">
+                    <Setter.Value>
+                        <ControlTemplate TargetType="{x:Type Thumb}">
+                            <Grid x:Name="Grid">
+                                <Rectangle HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Width="Auto" Height="Auto" Fill="Transparent" />
+                                <Border x:Name="Rectangle1" CornerRadius="10" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Width="Auto" Height="Auto"  Background="{TemplateBinding Background}" />
+                            </Grid>
+                            <ControlTemplate.Triggers>
+                                <Trigger Property="Tag" Value="Horizontal">
+                                    <Setter TargetName="Rectangle1" Property="Width" Value="Auto" />
+                                    <Setter TargetName="Rectangle1" Property="Height" Value="7" />
+                                </Trigger>
+                            </ControlTemplate.Triggers>
+                        </ControlTemplate>
+                    </Setter.Value>
+                </Setter>
+            </Style>
+
+            <!--ScrollBars-->
+            <Style x:Key="{x:Type ScrollBar}" TargetType="{x:Type ScrollBar}">
+                <Setter Property="Stylus.IsFlicksEnabled" Value="false" />
+                <Setter Property="Foreground" Value="LightGray" />
+                <Setter Property="Background" Value="DarkGray" />
+                <Setter Property="Width" Value="10" />
+                <Setter Property="Template">
+                    <Setter.Value>
+                        <ControlTemplate TargetType="{x:Type ScrollBar}">
+                            <Grid x:Name="GridRoot" Width="19" Background="{x:Null}">
+                                <Track x:Name="PART_Track" Grid.Row="0" IsDirectionReversed="true" Focusable="false">
+                                    <Track.Thumb>
+                                        <Thumb x:Name="Thumb" Background="{TemplateBinding Foreground}" Style="{DynamicResource ScrollThumbs}" />
+                                    </Track.Thumb>
+                                    <Track.IncreaseRepeatButton>
+                                        <RepeatButton x:Name="PageUp" Command="ScrollBar.PageDownCommand" Opacity="0" Focusable="false" />
+                                    </Track.IncreaseRepeatButton>
+                                    <Track.DecreaseRepeatButton>
+                                        <RepeatButton x:Name="PageDown" Command="ScrollBar.PageUpCommand" Opacity="0" Focusable="false" />
+                                    </Track.DecreaseRepeatButton>
+                                </Track>
+                            </Grid>
+
+                            <ControlTemplate.Triggers>
+                                <Trigger SourceName="Thumb" Property="IsMouseOver" Value="true">
+                                    <Setter Value="{DynamicResource ButtonSelectBrush}" TargetName="Thumb" Property="Background" />
+                                </Trigger>
+                                <Trigger SourceName="Thumb" Property="IsDragging" Value="true">
+                                    <Setter Value="{DynamicResource DarkBrush}" TargetName="Thumb" Property="Background" />
+                                </Trigger>
+
+                                <Trigger Property="IsEnabled" Value="false">
+                                    <Setter TargetName="Thumb" Property="Visibility" Value="Collapsed" />
+                                </Trigger>
+                                <Trigger Property="Orientation" Value="Horizontal">
+                                    <Setter TargetName="GridRoot" Property="LayoutTransform">
+                                        <Setter.Value>
+                                            <RotateTransform Angle="-90" />
+                                        </Setter.Value>
+                                    </Setter>
+                                    <Setter TargetName="PART_Track" Property="LayoutTransform">
+                                        <Setter.Value>
+                                            <RotateTransform Angle="-90" />
+                                        </Setter.Value>
+                                    </Setter>
+                                    <Setter Property="Width" Value="Auto" />
+                                    <Setter Property="Height" Value="12" />
+                                    <Setter TargetName="Thumb" Property="Tag" Value="Horizontal" />
+                                    <Setter TargetName="PageDown" Property="Command" Value="ScrollBar.PageLeftCommand" />
+                                    <Setter TargetName="PageUp" Property="Command" Value="ScrollBar.PageRightCommand" />
+                                </Trigger>
+                            </ControlTemplate.Triggers>
+                        </ControlTemplate>
+                    </Setter.Value>
+                </Setter>
+            </Style>
+        </ResourceDictionary>
+    </Window.Resources>
+
+
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="200"/>
+            <ColumnDefinition Width="*"/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="30"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+
+
+        <Grid Grid.Column="1" Grid.Row="1" Background="#FFCFCFCF">
+            <ScrollViewer>
+                <Grid>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="200"/>
+                        <RowDefinition Height="*"/>
+                        <RowDefinition Height="*"/>
+                    </Grid.RowDefinitions>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="1*"/>
+                        <ColumnDefinition Width="1*"/>
+                        <ColumnDefinition Width="1*"/>
+                    </Grid.ColumnDefinitions>
+
+                    <Grid Grid.Row="0" Grid.RowSpan="3" Grid.ColumnSpan="3" HorizontalAlignment="Center" Width="797" Margin="10,10,0,10">
+                        <Grid Background="White" Margin="20 20 20 20">
+                            <Grid.OpacityMask>
+                                <VisualBrush Visual="{ Binding ElementName=BorderG1 }"/>
+                            </Grid.OpacityMask>
+                            <Border x:Name="BorderG1" CornerRadius="5" Background="White"/>
+                            <StackPanel Orientation="Vertical">
+                                <Grid Width="757" Height="70" VerticalAlignment="Top">
+                                    <Grid Width="35" Height="50" Background="#FFFFAF24" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="20 0">
+                                        <Grid.Effect>
+                                            <DropShadowEffect BlurRadius="20" Color="#FFECECEC" RenderingBias="Quality" ShadowDepth="1"/>
+                                        </Grid.Effect>
+                                        <materialDesign:PackIcon Kind="FileDocument" HorizontalAlignment="Center" VerticalAlignment="Bottom" Margin="5" Foreground="White" Width="20" Height="20"/>
+                                    </Grid>
+                                    <Grid Width="150" Height="50" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="60 0">
+                                        <TextBlock Text="Items" HorizontalAlignment="Left" FontFamily="Champagne &amp; Limousines" Margin="5" VerticalAlignment="Center" Foreground="Gray" FontSize="20" />
+                                    </Grid>
+                                </Grid>
+                                <Grid>
+                                    <DataGrid x:Name="dataGrid" HorizontalAlignment="Center" Margin="20,10,20,20" VerticalAlignment="Top" Loaded="DataGrid_Loaded" Width="717" Height="190"/>
+                                </Grid>
+                                <Grid>
+                                    <Rectangle  Margin="0" Fill="White" RadiusY="10" RadiusX="10" VerticalAlignment="Bottom">
+
+                                    </Rectangle>
+                                    <Grid>
+                                        <StackPanel Orientation="Vertical">
+                                            <TextBlock Margin="15 0 15 0" OpacityMask="Crimson" Foreground="Gray" FontSize="20">Manage Data</TextBlock>
+                                            <StackPanel Orientation="Horizontal">
+                                                <StackPanel Orientation="Vertical" Width="250">
+                                                    <TextBox Margin="15" Style="{StaticResource MaterialDesignFloatingHintTextBox}" materialDesign:HintAssist.Hint="Item Name" Name="NameTextBox"></TextBox>
+                                                    <TextBox Margin="15" Style="{StaticResource MaterialDesignFloatingHintTextBox}" materialDesign:HintAssist.Hint="Quantity" Name="QuantityTextBox"></TextBox>
+                                                </StackPanel>
+                                                <StackPanel Orientation="Vertical" Width="250">
+                                                    <ComboBox Margin="15" Style="{StaticResource MaterialDesignFloatingHintComboBox}" materialDesign:HintAssist.Hint="Supplier" Name="SPIdTextBox" ScrollViewer.VerticalScrollBarVisibility="Visible" >
+                                                        <ComboBoxItem Content="CV. BIRA"></ComboBoxItem>
+                                                        <ComboBoxItem Content="CV. NARITA"></ComboBoxItem>
+                                                        <ComboBoxItem Content="CV. NARITA"></ComboBoxItem>
+                                                        <ComboBoxItem Content="CV. NARITA"></ComboBoxItem>
+                                                        <ComboBoxItem Content="CV. NARITA"></ComboBoxItem>
+                                                        <ComboBoxItem Content="CV. NARITA"></ComboBoxItem>
+                                                        <ComboBoxItem Content="CV. NARITA"></ComboBoxItem>
+                                                        <ComboBoxItem Content="CV. NARITA"></ComboBoxItem>
+                                                        <ComboBoxItem Content="CV. NARITA"></ComboBoxItem>
+                                                        <ComboBoxItem Content="CV. NARITA"></ComboBoxItem>
+                                                        <ComboBoxItem Content="CV. NARITA"></ComboBoxItem>
+                                                    </ComboBox>
+                                                </StackPanel>
+                                                <StackPanel Orientation="Vertical">
+                                                    <Button Margin="35 20 35 0" Content="ADD DATA" Background="#FF1A477E" Name="AddData"></Button>
+                                                    <Button Margin="35 20 35 0" Content="UPDATE DATA" Background="#FF1A477E" Name="UpdateData"></Button>
+                                                    <Button Margin="35 20 35 0" Content="DELETE DATA" Background="#FF1A477E" Name="DeleteData"></Button>
+                                                </StackPanel>
+                                            </StackPanel>
+                                        </StackPanel>
+                                    </Grid>
+                                </Grid>
+                            </StackPanel>
+                        </Grid>
+                    </Grid>
+                </Grid>
+            </ScrollViewer>
+        </Grid>
+
+        <Grid Grid.Row="1">
+            <Grid.Background>
+                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                    <GradientStop Color="LightGray" Offset="1"/>
+                    <GradientStop Color="#FFE6E6E6"/>
+                </LinearGradientBrush>
+            </Grid.Background>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="100"/>
+                <RowDefinition Height="*"/>
+            </Grid.RowDefinitions>
+            <Grid.Effect>
+                <DropShadowEffect BlurRadius="20" Color="#FFDEDEDE" RenderingBias="Quality" ShadowDepth="1"/>
+            </Grid.Effect>
+
+            <Grid Background="#FF769CCF">
+                <TextBlock Text="DASHBOARD" HorizontalAlignment="Center" VerticalAlignment="Center" FontFamily="WS Simple Gallifreyan" Foreground="White" FontSize="16"/>
+            </Grid>
+
+            <StackPanel Grid.Row="1">
+                <Button Margin="10" Background="#FF769CCF" BorderBrush="#FF769CCF" Click="Button_Click" >
+                    <Grid Width="150">
+                        <materialDesign:PackIcon Kind="ViewDashboard" VerticalAlignment="Center"/>
+                        <TextBlock HorizontalAlignment="Center" Text="DASHBOARD" FontFamily="Champagne &amp; Limousines"/>
+                    </Grid>
+                </Button>
+
+                <Button Margin="10" Background="#FF769CCF" BorderBrush="#FF769CCF">
+                    <Grid Width="150">
+                        <materialDesign:PackIcon Kind="File" VerticalAlignment="Center"/>
+                        <TextBlock HorizontalAlignment="Center" Text="LOAN REQUEST" FontFamily="Champagne &amp; Limousines"/>
+                    </Grid>
+                </Button>
+
+                <Button Margin="10" Background="#FF769CCF" BorderBrush="#FF769CCF">
+                    <Grid Width="150">
+                        <materialDesign:PackIcon Kind="PersonAdd" VerticalAlignment="Center"/>
+                        <TextBlock HorizontalAlignment="Center" Text="SUPPLIER" FontFamily="Champagne &amp; Limousines"/>
+                    </Grid>
+                </Button>
+
+                <Button Margin="10" Background="#FF769CCF" BorderBrush="#FF769CCF" Click="Button_Click_1">
+                    <Grid Width="150">
+                        <materialDesign:PackIcon Kind="Store" VerticalAlignment="Center"/>
+                        <TextBlock HorizontalAlignment="Center" Text="ITEM" FontFamily="Champagne &amp; Limousines"/>
+                    </Grid>
+                </Button>
+
+                <Button Margin="10" Background="#FF769CCF" BorderBrush="#FF769CCF" Click="Button_Click_2">
+                    <Grid Width="150">
+                        <materialDesign:PackIcon Kind="Category" VerticalAlignment="Center"/>
+                        <TextBlock HorizontalAlignment="Center" Text="ITEM CATEGORY" FontFamily="Champagne &amp; Limousines"/>
+                    </Grid>
+                </Button>
+
+                <Button Margin="10" Background="#FF769CCF" BorderBrush="#FF769CCF">
+                    <Grid Width="150">
+                        <materialDesign:PackIcon Kind="Settings" VerticalAlignment="Center"/>
+                        <TextBlock HorizontalAlignment="Center" Text="SETTING" FontFamily="Champagne &amp; Limousines"/>
+                    </Grid>
+                </Button>
+            </StackPanel>
+        </Grid>
+
+        <Grid x:Name="GridBarraTitulo" Grid.ColumnSpan="2" Background="#FF769CCF" MouseDown="GridBarraTitulo_MouseDown">
+            <StackPanel Orientation="Horizontal" HorizontalAlignment="Right" Margin="10,0">
+                <Button Style="{StaticResource MaterialDesignFloatingActionMiniAccentButton}" Width="25" Height="25" Background="{x:Null}" BorderBrush="{x:Null}" Foreground="White">
+                    <materialDesign:PackIcon Kind="Bell"/>
+                </Button>
+                <Button Style="{StaticResource MaterialDesignFloatingActionMiniAccentButton}" Width="25" Height="25" Background="{x:Null}" BorderBrush="{x:Null}" Foreground="White">
+                    <materialDesign:PackIcon Kind="Account"/>
+                </Button>
+                <Button x:Name="ButtonFechar" Style="{StaticResource MaterialDesignFloatingActionMiniAccentButton}" Width="25" Height="25" Background="{x:Null}" BorderBrush="{x:Null}" Foreground="White" Click="ButtonFechar_Click">
+                    <materialDesign:PackIcon Kind="Power"/>
+                </Button>
+            </StackPanel>
+        </Grid>
+    </Grid>
+</Window>
