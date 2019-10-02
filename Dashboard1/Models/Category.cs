@@ -6,7 +6,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace AssetManagement.Models
+namespace Dashboard1.Models
 {
     [Table("TB_M_Category")]
     public class Category
