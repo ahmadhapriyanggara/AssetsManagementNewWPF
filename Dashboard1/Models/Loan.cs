@@ -25,6 +25,7 @@ namespace Dashboard1.Models
         public int Employee_Role_Id { get; set; }
         public Employee_Role Employee_Role { get; set; }
 
+
         public ICollection<Item_Loan> Item_Loans { get; set; }
     }
 }

@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -22,8 +23,7 @@ namespace Dashboard1.View
         public Item()
         {
             InitializeComponent();
-            Category category = new Category();
-            DataContext = new CategoryViewModel(category);
+            
         }
 
         private void DataGrid_Loaded(object sender, RoutedEventArgs e)
@@ -51,53 +51,49 @@ namespace Dashboard1.View
             DragMove();
         }
 
-        private void Button_Click(object sender, RoutedEventArgs e)
+        private void ItemDashboard(object sender, RoutedEventArgs e)
         {
             this.Hide();
-            MainWindow dashboard = new MainWindow();
+            Dashboard dashboard = new Dashboard();
             dashboard.Show();
         }
 
-        private void Button_Click_1(object sender, RoutedEventArgs e)
+        private void ItemItem(object sender, RoutedEventArgs e)
         {
             this.Hide();
             Item item = new Item();
             item.Show();
         }
 
-        private void Button_Click_2(object sender, RoutedEventArgs e)
+        private void ItemCategory(object sender, RoutedEventArgs e)
         {
             this.Hide();
-            Item item = new Item();
-            item.Show();
-        }
-    }
-
-    internal class CategoryViewModel
-    {
-        public List<Category> Category { get; private set; }
-
-        public CategoryViewModel(Category category)
-        {
-            Category = new List<Category>();
-            Category.Add(category);
-        }
-    }
-
-    internal class Category
-    {
-        public string Test { get; private set; }
-        public int Percentage { get; private set; }
-
-        public Category()
-        {
-            Test = "Consumo Atual";
-            Percentage = CalculatePercentage();
+            MasterCategory category = new MasterCategory();
+            category.Show();
         }
 
-        private int CalculatePercentage()
+        private void AddDataItem_Click(object sender, RoutedEventArgs e)
         {
-            return 47; //Calculo da porcentagem de consumo
+
+        }
+
+        private void UpdateDataItem_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void DeleteDataItem_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void dataGrid_SelectedCellsChanged(object sender, SelectedCellsChangedEventArgs e)
+        {
+            if (dataGrid.SelectedCells != null) {
+                object item = dataGrid.SelectedItem;
+
+                ItemNameTextBox.Text = (dataGrid.SelectedCells[2].Column.GetCellContent(item) as TextBlock).Text;
+            }
         }
     }
 
