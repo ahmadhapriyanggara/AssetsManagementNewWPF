@@ -88,7 +88,6 @@
         </ResourceDictionary>
     </Window.Resources>
 
-
     <Grid>
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="200"/>
@@ -134,16 +133,25 @@
                                 </Grid>
                                 <Grid>
                                     <DataGrid 
-                                        x:Name="dataGrid"
+                                        x:Name="dataGridSupplier"
                                         Background="Azure"
-                                        HorizontalAlignment="Center"
+                                        HorizontalAlignment="Left"
                                         Margin="20,10,20,20"
                                         VerticalAlignment="Top"
                                         Loaded="DataGrid_Loaded"
                                         Width="717"
-                                        Height="190"
-                                        SelectedCellsChanged="dataGrid_SelectedCellsChanged"
-                                        IsReadOnly="True" />
+                                        Height="200"
+                                        SelectedCellsChanged="dataGridSupplier_SelectedCellsChanged"
+                                        IsReadOnly="True"
+                                        AutoGenerateColumns="False">
+                                        <DataGrid.Columns>
+                                            <DataGridTextColumn Header="Id" Binding="{Binding Id}"></DataGridTextColumn>
+                                            <DataGridTextColumn Header="Name" Binding="{Binding Name}"></DataGridTextColumn>
+                                            <DataGridTextColumn Header="Address" Binding="{Binding Address}"></DataGridTextColumn>
+                                            <DataGridTextColumn Header="Phone Number" Binding="{Binding No_Telp}"></DataGridTextColumn>
+                                        </DataGrid.Columns>
+                                    </DataGrid>
+
                                 </Grid>
                                 <Grid>
                                     <Rectangle  Margin="0" Fill="White" RadiusY="10" RadiusX="10" VerticalAlignment="Bottom">
@@ -155,15 +163,18 @@
                                             <StackPanel Orientation="Horizontal">
                                                 <StackPanel Orientation="Vertical" Width="250">
                                                     <TextBox Margin="15" Style="{StaticResource MaterialDesignFloatingHintTextBox}" materialDesign:HintAssist.Hint="Supplier Name" Name="SupplierNameTextBox"></TextBox>
+                                                    <TextBlock Name="SupplierNameErrorMessage" Margin="15 0 15 0" OpacityMask="Crimson" Foreground="Red"></TextBlock>
                                                     <TextBox Margin="15" Style="{StaticResource MaterialDesignFloatingHintTextBox}" materialDesign:HintAssist.Hint="Supplier Address" Name="SupplierAddressTextBox"></TextBox>
+                                                    <TextBlock Name="SupplierAddressErrorMessage" Margin="15 0 15 0" OpacityMask="Crimson" Foreground="Red"></TextBlock>
                                                 </StackPanel>
                                                 <StackPanel Orientation="Vertical" Width="250">
                                                     <TextBox Margin="15" Style="{StaticResource MaterialDesignFloatingHintTextBox}" materialDesign:HintAssist.Hint="Supplier Phone Number" Name="SupplierPhoneTextBox"></TextBox>
+                                                    <TextBlock Name="SupplierPhoneErrorMessage" Margin="15 0 15 0" OpacityMask="Crimson" Foreground="Red"></TextBlock>
                                                 </StackPanel>
                                                 <StackPanel Orientation="Vertical">
-                                                    <Button Margin="35 20 35 0" Content="ADD DATA" Background="#FF1A477E" Name="AddDataSupplier"></Button>
-                                                    <Button Margin="35 20 35 0" Content="UPDATE DATA" Background="#FF1A477E" Name="UpdateDataSupplier" ></Button>
-                                                    <Button Margin="35 20 35 0" Content="DELETE DATA" Background="#FF1A477E" Name="DeleteDataSupplier" ></Button>
+                                                    <Button Margin="35 20 35 0" Content="ADD DATA" Background="#FF1A477E" Name="AddDataSupplier" Click="AddDataSupplier_Click"></Button>
+                                                    <Button Margin="35 20 35 0" Content="UPDATE DATA" Background="#FF1A477E" Name="UpdateDataSupplier" Click="UpdateDataSupplier_Click" ></Button>
+                                                    <Button Margin="35 20 35 0" Content="DELETE DATA" Background="#FF1A477E" Name="DeleteDataSupplier" Click="DeleteDataSupplier_Click" ></Button>
                                                 </StackPanel>
                                             </StackPanel>
                                         </StackPanel>

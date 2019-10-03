@@ -16,14 +16,6 @@ namespace Dashboard1.Models
         public DateTime Loan_Date { get; set; }
         public DateTime Return_Date { get; set; }
         public string Remark { get; set; }
-<<<<<<< HEAD
-        [ForeignKey("Loan_Approve_Status")]
-        public int Loan_Approve_Status_Id { get; set; }
-        public Loan_Approve_Status Loan_Approve_Status { get; set; }
-        [ForeignKey("Employee_Role")]
-        public int Employee_Role_Id { get; set; }
-        //public Employee Loan_Approve_Status { get; set; }
-=======
 
         [ForeignKey("Loan_Approve_Status")]
         public int Loan_Approve_Status_Id { get; set; }
@@ -33,7 +25,7 @@ namespace Dashboard1.Models
         public int Employee_Role_Id { get; set; }
         public Employee_Role Employee_Role { get; set; }
 
->>>>>>> bc496322409ddae4f899ebef5a4ec045ec0f8d96
+
         public ICollection<Item_Loan> Item_Loans { get; set; }
     }
 }

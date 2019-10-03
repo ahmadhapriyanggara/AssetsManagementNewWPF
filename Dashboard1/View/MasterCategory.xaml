@@ -132,10 +132,44 @@
                                         <TextBlock Text="Item Categories" HorizontalAlignment="Left" FontFamily="Champagne &amp; Limousines" Margin="5" VerticalAlignment="Center" Foreground="Gray" FontSize="20" />
                                     </Grid>
                                 </Grid>
-                                <Grid>
-                                    <DataGrid x:Name="dataGrid" HorizontalAlignment="Center" Margin="20,10,20,20" VerticalAlignment="Top" Loaded="DataGrid_Loaded" Width="717" Height="190"/>
+                                <Grid Height="450">
+                                    <!--<DataGrid x:Name="dataGrid" HorizontalAlignment="Center" Margin="20,10,20,20" VerticalAlignment="Top" Loaded="DataGrid_Loaded" Width="717" Height="190"/>-->
+                                    <StackPanel Orientation="Horizontal">
+                                        <DataGrid 
+                                            Background="Azure" 
+                                            SelectedCellsChanged="DataGridCategory_SelectedCellsChanged" 
+                                            IsReadOnly="True" 
+                                            x:Name="DataGridCategory" 
+                                            Height="140" 
+                                            HorizontalAlignment="Left" 
+                                            Margin="20,10,20,20" 
+                                            VerticalAlignment="Top" 
+                                            Width="250" 
+                                            Loaded="DataGrid_Loaded" 
+                                            AutoGenerateColumns="False">
+                                            <DataGrid.Columns>
+                                                <DataGridTextColumn Header="Category Id" Binding="{Binding Id}"></DataGridTextColumn>
+                                                <DataGridTextColumn Header="Category Name" Binding="{Binding Name}"></DataGridTextColumn>
+                                            </DataGrid.Columns>
+                                        </DataGrid>
+                                        <StackPanel Orientation="Vertical">
+                                            <TextBlock Margin="15 0 15 0" OpacityMask="Crimson" Foreground="Gray" FontSize="20">Manage Data</TextBlock>
+                                            <StackPanel Orientation="Horizontal">
+                                                <StackPanel Orientation="Vertical" Width="250">
+                                                    <TextBox Margin="15" Style="{StaticResource MaterialDesignFloatingHintTextBox}" materialDesign:HintAssist.Hint="Category Name" Name="CategoryTextBox"></TextBox>
+                                                    <TextBlock Name="CategoryNameErrorMessage" Margin="15 0 15 0" OpacityMask="Crimson" Foreground="Red"></TextBlock>
+                                                </StackPanel>
+                                                <StackPanel Orientation="Vertical">
+                                                    <Button Margin="5 10 5 10" Content="ADD DATA" Background="#FF1A477E" Name="AddDataCategory" Click="AddDataCategory_Click" ></Button>
+                                                    <Button Margin="5 10 5 10" Content="UPDATE DATA" Background="#FF1A477E" Name="UpdateDataCategory" Click="UpdateDataCategory_Click" ></Button>
+                                                    <Button Margin="5 10 5 10" Content="DELETE DATA" Background="#FF1A477E" Name="DeleteDataCategory" Click="DeleteDataCategory_Click" ></Button>
+                                                </StackPanel>
+                                            </StackPanel>
+                                        </StackPanel>
+                                    </StackPanel>
+                                    
                                 </Grid>
-                                <Grid>
+                                <!--<Grid>
                                     <Rectangle  Margin="0" Fill="White" RadiusY="10" RadiusX="10" VerticalAlignment="Bottom">
 
                                     </Rectangle>
@@ -145,16 +179,17 @@
                                             <StackPanel Orientation="Horizontal">
                                                 <StackPanel Orientation="Vertical" Width="250">
                                                     <TextBox Margin="15" Style="{StaticResource MaterialDesignFloatingHintTextBox}" materialDesign:HintAssist.Hint="Category Name" Name="CategoryTextBox"></TextBox>
+                                                    <TextBlock Name="CategoryNameErrorMessage" Margin="15 0 15 0" OpacityMask="Crimson" Foreground="Red"></TextBlock>
                                                 </StackPanel>
-                                                <StackPanel Orientation="Vertical">
-                                                    <Button Margin="35 20 35 0" Content="ADD DATA" Background="#FF1A477E" Name="AddDataCategory" Click="AddDataCategory_Click"></Button>
-                                                    <Button Margin="35 20 35 0" Content="UPDATE DATA" Background="#FF1A477E" Name="UpdateDataCategory" Click="UpdateDataCategory_Click"></Button>
-                                                    <Button Margin="35 20 35 0" Content="DELETE DATA" Background="#FF1A477E" Name="DeleteDataCategory" Click="DeleteDataCategory_Click"></Button>
+                                                <StackPanel Orientation="Horizontal">
+                                                    <Button Margin="5 0 5 0" Content="ADD DATA" Background="#FF1A477E" Name="AddDataCategory" Click="AddDataCategory_Click" VerticalAlignment="Center" HorizontalAlignment="Center"></Button>
+                                                    <Button Margin="5 0 5 0" Content="UPDATE DATA" Background="#FF1A477E" Name="UpdateDataCategory" Click="UpdateDataCategory_Click" VerticalAlignment="Center" HorizontalAlignment="Center"></Button>
+                                                    <Button Margin="5 0 5 0" Content="DELETE DATA" Background="#FF1A477E" Name="DeleteDataCategory" Click="DeleteDataCategory_Click" VerticalAlignment="Center" HorizontalAlignment="Center"></Button>
                                                 </StackPanel>
                                             </StackPanel>
                                         </StackPanel>
                                     </Grid>
-                                </Grid>
+                                </Grid>-->
                                 
                             </StackPanel>
                             
