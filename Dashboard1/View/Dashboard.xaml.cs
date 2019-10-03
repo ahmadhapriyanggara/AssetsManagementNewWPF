@@ -14,30 +14,28 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 
-namespace Dashboard1
+namespace Dashboard1.View
 {
     /// <summary>
     /// Interação lógica para MainWindow.xam
     /// </summary>
-    public partial class MainWindow : Window
+    public partial class Dashboard : Window
     {
-        public MainWindow()
+        public Dashboard()
         {
             InitializeComponent();
 
-            Category category = new Category();
-            DataContext = new CategoryViewModel(category);
         }
 
         private void DataGrid_Loaded(object sender, RoutedEventArgs e)
         {
             // ... Create a List of objects.
-            var items = new List<Transaksi_Loan>();
-            items.Add(new Transaksi_Loan(1,"Printer HP",Convert.ToDateTime("11-10-2019"), Convert.ToDateTime("11-10-2019"), "Good","Dipinjam"));
-            items.Add(new Transaksi_Loan(2, "Printer HP", Convert.ToDateTime("11-10-2019"), Convert.ToDateTime("11-10-2019"), "Good", "Dipinjam"));
-            items.Add(new Transaksi_Loan(3, "Printer HP", Convert.ToDateTime("11-10-2019"), Convert.ToDateTime("11-10-2019"), "Good", "Dipinjam"));
-            items.Add(new Transaksi_Loan(4, "Printer HP", Convert.ToDateTime("11-10-2019"), Convert.ToDateTime("11-10-2019"), "Good", "Dipinjam"));
-            items.Add(new Transaksi_Loan(5, "Printer HP", Convert.ToDateTime("11-10-2019"), Convert.ToDateTime("11-10-2019"), "Good", "Dipinjam"));
+            var items = new List<Transaksi_Loanss>();
+            items.Add(new Transaksi_Loanss(1,"Printer HP",Convert.ToDateTime("11-10-2019"), Convert.ToDateTime("11-10-2019"), "Good","Dipinjam"));
+            items.Add(new Transaksi_Loanss(2, "Printer HP", Convert.ToDateTime("11-10-2019"), Convert.ToDateTime("11-10-2019"), "Good", "Dipinjam"));
+            items.Add(new Transaksi_Loanss(3, "Printer HP", Convert.ToDateTime("11-10-2019"), Convert.ToDateTime("11-10-2019"), "Good", "Dipinjam"));
+            items.Add(new Transaksi_Loanss(4, "Printer HP", Convert.ToDateTime("11-10-2019"), Convert.ToDateTime("11-10-2019"), "Good", "Dipinjam"));
+            items.Add(new Transaksi_Loanss(5, "Printer HP", Convert.ToDateTime("11-10-2019"), Convert.ToDateTime("11-10-2019"), "Good", "Dipinjam"));
 
             // ... Assign ItemsSource of DataGrid.
             var grid = sender as DataGrid;
@@ -54,57 +52,37 @@ namespace Dashboard1
             DragMove();
         }
 
-        private void Button_Click(object sender, RoutedEventArgs e)
+        private void DashboardCategory(object sender, RoutedEventArgs e)
         {
             this.Hide();
             MasterCategory masterCategory = new MasterCategory();
             masterCategory.Show();
         }
 
-        private void Button_Click_1(object sender, RoutedEventArgs e)
+        private void DashboardDashboard(object sender, RoutedEventArgs e)
         {
             this.Hide();
-            MainWindow dashboard = new MainWindow();
+            Dashboard dashboard = new Dashboard();
             dashboard.Show();
         }
 
-        private void Button_Click_2(object sender, RoutedEventArgs e)
+        private void DashboardItem(object sender, RoutedEventArgs e)
         {
             this.Hide();
             Item item = new Item();
             item.Show();
         }
-    }
 
-    internal class CategoryViewModel
-    {
-        public List<Category> Category { get; private set; }
-
-        public CategoryViewModel(Category category)
+        private void DashboardSupplier(object sender, RoutedEventArgs e)
         {
-            Category = new List<Category>();
-            Category.Add(category);
+            this.Hide();
+            Supplier supplier = new Supplier();
+            supplier.Show();
         }
     }
 
-    internal class Category
-    {
-        public string Test { get; private set; }
-        public int Percentage { get; private set; }
 
-        public Category()
-        {
-            Test = "Consumo Atual";
-            Percentage = CalculatePercentage();
-        }
-
-        private int CalculatePercentage()
-        {
-            return 47; //Calculo da porcentagem de consumo
-        }
-    }
-
-    class Transaksi_Loan
+    class Transaksi_Loanss
     {
         public int Id { get; set; }
         public string ItemName { get; set; }
@@ -113,7 +91,7 @@ namespace Dashboard1
         public string Remark { get; set; }
         public string Status { get; set; }
 
-        public Transaksi_Loan(int id, string iname, DateTime LDate, DateTime RDate, string remark, string status)
+        public Transaksi_Loanss(int id, string iname, DateTime LDate, DateTime RDate, string remark, string status)
         {
             this.Id = id;
             this.ItemName = iname;

@@ -1,4 +1,4 @@
-﻿using AssetManagement.Models;
+﻿using Dashboard1.Models;
 using System;
 using System.Collections.Generic;
 using System.Data.Entity;
@@ -6,7 +6,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace AssetManagement.Context
+namespace Dashboard1.Context
 {
     class MyContext : DbContext
     {

@@ -4,13 +4,10 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace AssetManagement.Controller
+namespace Dashboard1.Controller
 {
     class LoginController
     {
-        //public bool login(string email, string password)
-        //{
-
-        //}
+        
     }
 }
