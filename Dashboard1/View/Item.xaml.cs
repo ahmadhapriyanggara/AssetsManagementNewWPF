@@ -1,4 +1,6 @@
-﻿using System;
+﻿using Dashboard1.Context;
+using Dashboard1.Models;
+using System;
 using System.Collections.Generic;
 using System.Data;
 using System.Linq;
@@ -94,6 +96,17 @@ namespace Dashboard1.View
 
                 ItemNameTextBox.Text = (dataGrid.SelectedCells[2].Column.GetCellContent(item) as TextBlock).Text;
             }
+        }
+
+        private void CategoryComboBox_Loaded(object sender, RoutedEventArgs e)
+        {
+            Category supplier = new Category();
+            MyContext _context = new MyContext();
+            var get = _context.Categorys.Where(u => u.isDeleted != true).ToList();
+
+            // ... Assign ItemsSource of DataGrid.
+            var combo = sender as ComboBox;
+            combo.ItemsSource = get;
         }
     }
 

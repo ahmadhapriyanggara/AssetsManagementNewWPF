@@ -158,18 +158,16 @@
                                                     <TextBox Margin="15" Style="{StaticResource MaterialDesignFloatingHintTextBox}" materialDesign:HintAssist.Hint="Quantity" Name="QuantityTextBox"></TextBox>
                                                 </StackPanel>
                                                 <StackPanel Orientation="Vertical" Width="250">
-                                                    <ComboBox Margin="15" Style="{StaticResource MaterialDesignFloatingHintComboBox}" materialDesign:HintAssist.Hint="Supplier" Name="SPIdTextBox" ScrollViewer.VerticalScrollBarVisibility="Auto">
-                                                        <ComboBoxItem Content="CV. BIRA"></ComboBoxItem>
-                                                        <ComboBoxItem Content="CV. NARITA"></ComboBoxItem>
-                                                        <ComboBoxItem Content="CV. NARITA"></ComboBoxItem>
-                                                        <ComboBoxItem Content="CV. NARITA"></ComboBoxItem>
-                                                        <ComboBoxItem Content="CV. NARITA"></ComboBoxItem>
-                                                        <ComboBoxItem Content="CV. NARITA"></ComboBoxItem>
-                                                        <ComboBoxItem Content="CV. NARITA"></ComboBoxItem>
-                                                        <ComboBoxItem Content="CV. NARITA"></ComboBoxItem>
-                                                        <ComboBoxItem Content="CV. NARITA"></ComboBoxItem>
-                                                        <ComboBoxItem Content="CV. NARITA"></ComboBoxItem>
-                                                        <ComboBoxItem Content="CV. NARITA"></ComboBoxItem>
+                                                    <ComboBox 
+                                                        Margin="15" 
+                                                        Style="{StaticResource MaterialDesignFloatingHintComboBox}" 
+                                                        materialDesign:HintAssist.Hint="Category" 
+                                                        Name="CategoryComboBox" 
+                                                        ScrollViewer.VerticalScrollBarVisibility="Auto" 
+                                                        Loaded="CategoryComboBox_Loaded"
+                                                        DisplayMemberPath="Name"
+                                                        SelectedValuePath="Id"
+                                                        SelectedValue="{Binding Path=Id}">
                                                     </ComboBox>
                                                 </StackPanel>
                                                 <StackPanel Orientation="Vertical">
