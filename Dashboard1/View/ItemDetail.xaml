@@ -1,0 +1,71 @@
+﻿<Window x:Class="Dashboard1.View.ItemDetail"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Dashboard1"
+        xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+        xmlns:MetroChart="clr-namespace:De.TorstenMandelkow.MetroChart;assembly=De.TorstenMandelkow.MetroChart"
+        mc:Ignorable="d" Height="350" Width="500" ResizeMode="NoResize" WindowStartupLocation="CenterScreen" WindowStyle="None">
+
+    <Grid Background="{DynamicResource {x:Static SystemColors.ControlLightBrushKey}}">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="35"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+
+        <Grid Grid.Row="0">
+            <StackPanel Orientation="Horizontal">
+                <Grid Width="35" Height="35" Background="#FFFFAF24" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="20 0" >
+                    <Grid.Effect>
+                        <DropShadowEffect BlurRadius="20" Color="#FFECECEC" RenderingBias="Quality" ShadowDepth="1"/>
+                    </Grid.Effect>
+                    <materialDesign:PackIcon Kind="Store" HorizontalAlignment="Center" VerticalAlignment="Bottom" Margin="5" Foreground="White" Width="20" Height="20"/>
+                </Grid>
+                <TextBlock Text="Item Details" HorizontalAlignment="Left" FontFamily="Champagne &amp; Limousines" Margin="5" VerticalAlignment="Center" Foreground="Gray" FontSize="20" />
+            </StackPanel>
+        </Grid>
+
+        <Grid Grid.Row="1">
+            <StackPanel Orientation="Vertical">
+                <StackPanel Orientation="Horizontal">
+                    <StackPanel Orientation="Vertical" Width="250">
+                        <TextBox Margin="15" Style="{StaticResource MaterialDesignFloatingHintTextBox}" materialDesign:HintAssist.Hint="Item Serial Number" Name="SerialNumberTextBox"></TextBox>
+                        <TextBlock Name="SerialNumberErrorMessage" Margin="10 0 10 0" OpacityMask="Crimson" Foreground="Red"></TextBlock>
+                        <ComboBox 
+                            Margin="15" 
+                            Style="{StaticResource MaterialDesignFloatingHintComboBox}" 
+                            materialDesign:HintAssist.Hint="Item" 
+                            Name="ItemComboBox" 
+                            ScrollViewer.VerticalScrollBarVisibility="Auto" 
+                            Loaded="ItemComboBox_Loaded"
+                            DisplayMemberPath="Name"
+                            SelectedValuePath="Id"
+                            SelectedValue="{Binding Path=Id}"
+                            >
+                        </ComboBox>
+                        <TextBlock Name="ItemNameErrorMessage" Margin="10 0 10 0" OpacityMask="Crimson" Foreground="Red"></TextBlock>
+                    </StackPanel>
+                    <StackPanel Orientation="Vertical" Width="250">
+                        <TextBox Margin="15" Style="{StaticResource MaterialDesignFloatingHintTextBox}" materialDesign:HintAssist.Hint="Item Condition" Name="ItemConditionTextBox"></TextBox>
+                        <TextBlock Name="ItemConditionErrorMessage" Margin="10 0 10 0" OpacityMask="Crimson" Foreground="Red"></TextBlock>
+                        <ComboBox 
+                            Margin="15" 
+                            Style="{StaticResource MaterialDesignFloatingHintComboBox}" 
+                            materialDesign:HintAssist.Hint="Supplier" 
+                            Name="SupplierComboBox" 
+                            ScrollViewer.VerticalScrollBarVisibility="Auto" 
+                            Loaded="SupplierComboBox_Loaded"
+                            DisplayMemberPath="Name"
+                            SelectedValuePath="Id"
+                            SelectedValue="{Binding Path=Id}"
+                            >
+                        </ComboBox>
+                        <TextBlock Name="SupplierErrorMessage" Margin="10 0 10 0" OpacityMask="Crimson" Foreground="Red"></TextBlock>
+                    </StackPanel>
+                </StackPanel>
+                <Button  Content="ADD DATA" Background="#FF1A477E" Name="AddDataItem" Click="AddDataItemDetails_Click" HorizontalAlignment="Center"></Button>
+            </StackPanel>
+        </Grid>
+    </Grid>
+</Window>
