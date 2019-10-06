@@ -19,8 +19,11 @@ namespace Dashboard1.Models
         public string Email { get; set; }
         public bool isDeleted { get; set; }
 
-        public int Manager_Id { get; set; }
-        
+
+        [ForeignKey("Manager")]
+        public int? Manager_Id { get; set; }
+        public Employee Manager { get; set; }
+
         [ForeignKey("Department")]
         public string Department_Id { get; set; }
         public Department Department { get; set; }

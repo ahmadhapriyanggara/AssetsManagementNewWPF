@@ -19,6 +19,7 @@ namespace Dashboard1.Models
         [ForeignKey("Item")]
         public int Item_Id { get; set; }
         public Item Item { get; set; }
+
         [ForeignKey("Supplier")]
         public int Supplier_Id { get; set; }
         public Supplier Supplier { get; set; }

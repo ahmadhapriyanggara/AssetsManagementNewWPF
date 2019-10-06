@@ -16,6 +16,5 @@ namespace Dashboard1.Models
         public string Email { get; set; }
         public string Password { get; set; }
         public bool isDeleted { get; set; }
-        public ICollection<Employee> Employees { get; set; }
     }
 }

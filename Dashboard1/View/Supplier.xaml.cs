@@ -24,11 +24,39 @@ namespace Dashboard1.View
         private string Gname;
         private string Gaddress;
         private string Gphone;
+        string email;
+        string name;
+        string roles;
         private object item;
 
-        public Supplier()
+        public Supplier(string Uemail, string Uname, string Uroles)
         {
             InitializeComponent();
+            GlobalSetter(Uemail, Uname, Uroles);
+            LoadSideNavBar(Uroles);
+        }
+
+        private void LoadSideNavBar(string RoleId)
+        {
+            if (RoleId == "EMP")
+            {
+                ButtonSupplier.Visibility = Visibility.Collapsed;
+                ButtonItem.Visibility = Visibility.Collapsed;
+                ButtonCategory.Visibility = Visibility.Collapsed;
+            }
+            else if (RoleId == "MAN")
+            {
+                ButtonSupplier.Visibility = Visibility.Collapsed;
+                ButtonItem.Visibility = Visibility.Collapsed;
+                ButtonCategory.Visibility = Visibility.Collapsed;
+            }
+
+        }
+        public void GlobalSetter(string Uemail, string Uname, string Uroles)
+        {
+            email = Uemail;
+            name = Uname;
+            roles = Uroles;
         }
 
         private void AddDataSupplier_Click(object sender, RoutedEventArgs e)
@@ -89,8 +117,6 @@ namespace Dashboard1.View
 
                 CallSupplier.AddSupplier(Sname, Saddress, Sphone);
             }
-
-
         }
 
         private void UpdateDataSupplier_Click(object sender, RoutedEventArgs e)
@@ -169,28 +195,28 @@ namespace Dashboard1.View
         private void SupplierDashboard(object sender, RoutedEventArgs e)
         {
             this.Hide();
-            Dashboard dashboard = new Dashboard();
+            Dashboard dashboard = new Dashboard(email, name, roles);
             dashboard.Show();
         }
 
         private void SupplierSupplier(object sender, RoutedEventArgs e)
         {
             this.Hide();
-            Supplier supplier = new Supplier();
+            Supplier supplier = new Supplier(email, name, roles);
             supplier.Show();
         }
 
         private void SupplierItem(object sender, RoutedEventArgs e)
         {
             this.Hide();
-            Item item = new Item();
+            Item item = new Item(email, name, roles);
             item.Show();
         }
 
         private void SupplierCategory(object sender, RoutedEventArgs e)
         {
             this.Hide();
-            MasterCategory category = new MasterCategory();
+            MasterCategory category = new MasterCategory(email, name, roles);
             category.Show();
         }
 
@@ -206,7 +232,7 @@ namespace Dashboard1.View
 
         private void DataGrid_Loaded(object sender, RoutedEventArgs e)
         {
-            Supplier supplier = new Supplier();
+            Models.Supplier supplier = new Models.Supplier();
             MyContext _context = new MyContext();
             var get = _context.Suppliers.Where(u => u.isDeleted != true).ToList();
 
