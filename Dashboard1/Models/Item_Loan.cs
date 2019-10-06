@@ -15,17 +15,21 @@ namespace Dashboard1.Models
         public int Id { get; set; }
         public int Quantity_Loan { get; set; }
         public DateTime Return_Item_Date { get; set; }
-        
+
         [ForeignKey("Loan")]
         public int loan_id { get; set; }
         public Loan Loan { get; set; }
 
-        [ForeignKey("Item_Supplier")]
-        public int Item_Supplier_Id { get; set; }
-        public Item_Supplier Item_Supplier { get; set; }
+        [ForeignKey("Employee")]
+        public int Employee_Id { get; set; }
+        public Employee Employee { get; set; }
 
-        [ForeignKey("Item_Loan_Return_Status")]
-        public int Item_Loan_Return_Status_Id { get; set; }
-        public Item_Loan_Return_Status Item_Loan_Return_Status { get; set; }
+        [ForeignKey("Return_Status")]
+        public int Item_LoanReturn_Status_Id { get; set; }
+        public Item_Return_Status Return_Status { get; set; }
+
+        [ForeignKey("Supplier")]
+        public int Item_Supplier_Id { get; set; }
+        public Item_Supplier Supplier { get; set; }
     }
 }

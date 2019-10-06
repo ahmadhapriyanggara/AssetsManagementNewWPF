@@ -22,6 +22,5 @@ namespace Dashboard1.Models
         public string Role_Id { get; set; }
         public Role Role { get; set; }
 
-        public ICollection<Loan> Loans { get; set; }
     }
 }

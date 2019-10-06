@@ -19,6 +19,6 @@ namespace Dashboard1.Models
         [ForeignKey("Category")]
         public int Category_Id { get; set; }
         public Category Category { get; set; }
-        public ICollection<Item_Supplier> Item_Suppliers { get; set; }
+        public ICollection<Item> Items { get; set; }
     }
 }

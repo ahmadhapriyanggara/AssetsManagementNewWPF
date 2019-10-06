@@ -239,42 +239,42 @@
             </Grid>
 
             <StackPanel Grid.Row="1">
-                <Button Margin="10" Background="#FF769CCF" BorderBrush="#FF769CCF" Click="DashboardDashboard">
+                <Button Name="ButtonDashboard" Margin="10" Background="#FF769CCF" BorderBrush="#FF769CCF" Click="DashboardDashboard" Visibility="Visible">
                     <Grid Width="150">
                         <materialDesign:PackIcon Kind="ViewDashboard" VerticalAlignment="Center"/>
                         <TextBlock HorizontalAlignment="Center" Text="DASHBOARD" FontFamily="Champagne &amp; Limousines"/>
                     </Grid>
                 </Button>
 
-                <Button Margin="10" Background="#FF769CCF" BorderBrush="#FF769CCF">
+                <Button Name="ButtonLoanRequest" Margin="10" Background="#FF769CCF" BorderBrush="#FF769CCF" Visibility="Visible">
                     <Grid Width="150">
                         <materialDesign:PackIcon Kind="File" VerticalAlignment="Center"/>
                         <TextBlock HorizontalAlignment="Center" Text="LOAN REQUEST" FontFamily="Champagne &amp; Limousines"/>
                     </Grid>
                 </Button>
 
-                <Button Margin="10" Background="#FF769CCF" BorderBrush="#FF769CCF" Click="DashboardSupplier">
+                <Button Name="ButtonSupplier" Margin="10" Background="#FF769CCF" BorderBrush="#FF769CCF" Click="DashboardSupplier" Visibility="Visible">
                     <Grid Width="150">
                         <materialDesign:PackIcon Kind="PersonAdd" VerticalAlignment="Center"/>
                         <TextBlock HorizontalAlignment="Center" Text="SUPPLIER" FontFamily="Champagne &amp; Limousines"/>
                     </Grid>
                 </Button>
 
-                <Button Margin="10" Background="#FF769CCF" BorderBrush="#FF769CCF" Click="DashboardItem">
+                <Button Name="ButtonItem" Margin="10" Background="#FF769CCF" BorderBrush="#FF769CCF" Click="DashboardItem" Visibility="Visible">
                     <Grid Width="150">
                         <materialDesign:PackIcon Kind="Store" VerticalAlignment="Center"/>
                         <TextBlock HorizontalAlignment="Center" Text="ITEM" FontFamily="Champagne &amp; Limousines"/>
                     </Grid>
                 </Button>
 
-                <Button Margin="10" Background="#FF769CCF" BorderBrush="#FF769CCF" Click="DashboardCategory">
+                <Button Name="ButtonCategory" Margin="10" Background="#FF769CCF" BorderBrush="#FF769CCF" Click="DashboardCategory" Visibility="Visible">
                     <Grid Width="150">
                         <materialDesign:PackIcon Kind="Category" VerticalAlignment="Center"/>
                         <TextBlock HorizontalAlignment="Center" Text="ITEM CATEGORY" FontFamily="Champagne &amp; Limousines"/>
                     </Grid>
                 </Button>
 
-                <Button Margin="10" Background="#FF769CCF" BorderBrush="#FF769CCF">
+                <Button Name="ButtonSetting" Margin="10" Background="#FF769CCF" BorderBrush="#FF769CCF" Visibility="Visible">
                     <Grid Width="150">
                         <materialDesign:PackIcon Kind="Settings" VerticalAlignment="Center"/>
                         <TextBlock HorizontalAlignment="Center" Text="SETTING" FontFamily="Champagne &amp; Limousines"/>

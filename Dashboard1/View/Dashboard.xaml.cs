@@ -21,9 +21,29 @@ namespace Dashboard1.View
     /// </summary>
     public partial class Dashboard : Window
     {
-        public Dashboard()
+        string email;
+        string name;
+        string roles;
+        public Dashboard(string Uemail, string Uname, string Uroles)
         {
             InitializeComponent();
+            GlobalSetter(Uemail, Uname, Uroles);
+            LoadSideNavBar(Uroles);
+            MessageBox.Show(Uroles);
+
+        }
+
+        private void LoadSideNavBar(string RoleId) {
+            if (RoleId == "EMP") {
+                ButtonSupplier.Visibility = Visibility.Collapsed;
+                ButtonItem.Visibility = Visibility.Collapsed;
+                ButtonCategory.Visibility = Visibility.Collapsed;
+            }
+            else if (RoleId == "MAN") {
+                ButtonSupplier.Visibility = Visibility.Collapsed;
+                ButtonItem.Visibility = Visibility.Collapsed;
+                ButtonCategory.Visibility = Visibility.Collapsed;
+            }
 
         }
 
@@ -55,29 +75,35 @@ namespace Dashboard1.View
         private void DashboardCategory(object sender, RoutedEventArgs e)
         {
             this.Hide();
-            MasterCategory masterCategory = new MasterCategory();
+            MasterCategory masterCategory = new MasterCategory(email, name, roles);
             masterCategory.Show();
         }
 
         private void DashboardDashboard(object sender, RoutedEventArgs e)
         {
             this.Hide();
-            Dashboard dashboard = new Dashboard();
+            Dashboard dashboard = new Dashboard(email, name, roles);
             dashboard.Show();
         }
 
         private void DashboardItem(object sender, RoutedEventArgs e)
         {
             this.Hide();
-            Item item = new Item();
+            Item item = new Item(email, name, roles);
             item.Show();
         }
 
         private void DashboardSupplier(object sender, RoutedEventArgs e)
         {
             this.Hide();
-            Supplier supplier = new Supplier();
+            Supplier supplier = new Supplier(email, name, roles);
             supplier.Show();
+        }
+        public void GlobalSetter(string Uemail, string Uname, string Uroles)
+        {
+            email = Uemail;
+            name = Uname;
+            roles = Uroles;
         }
     }
 
@@ -101,6 +127,10 @@ namespace Dashboard1.View
             this.Status = status;
 
         }
+
+
+        
+
     }
 
 

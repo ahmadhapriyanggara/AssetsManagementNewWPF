@@ -93,11 +93,21 @@
     </ApplicationDefinition>
     <Compile Include="Context\MyContext.cs" />
     <Compile Include="Controller\CategoryController.cs" />
-    <Compile Include="Controller\LoginController.cs" />
+    <Compile Include="Controller\ItemController.cs" />
+    <Compile Include="Controller\ItemDetailController.cs" />
+    <Compile Include="Controller\UserController.cs" />
     <Compile Include="Controller\SupplierController.cs" />
-    <Compile Include="Migrations\201910021046515_addmodel.cs" />
-    <Compile Include="Migrations\201910021046515_addmodel.Designer.cs">
-      <DependentUpon>201910021046515_addmodel.cs</DependentUpon>
+    <Compile Include="Migrations\201910040400523_addmodel.cs" />
+    <Compile Include="Migrations\201910040400523_addmodel.Designer.cs">
+      <DependentUpon>201910040400523_addmodel.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201910040407241_addcontext.cs" />
+    <Compile Include="Migrations\201910040407241_addcontext.Designer.cs">
+      <DependentUpon>201910040407241_addcontext.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201910040417535_addnullablecolumnemployee.cs" />
+    <Compile Include="Migrations\201910040417535_addnullablecolumnemployee.Designer.cs">
+      <DependentUpon>201910040417535_addnullablecolumnemployee.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\Approve_Status.cs" />
@@ -108,7 +118,7 @@
     <Compile Include="Models\Employee_Role.cs" />
     <Compile Include="Models\Item.cs" />
     <Compile Include="Models\Item_Loan.cs" />
-    <Compile Include="Models\Item_Loan_Return_Status.cs" />
+    <Compile Include="Models\Item_Return_Status.cs" />
     <Compile Include="Models\Item_Supplier.cs" />
     <Compile Include="Models\Loan.cs" />
     <Compile Include="Models\Loan_Approve_Status.cs" />
@@ -122,6 +132,9 @@
     </Compile>
     <Compile Include="View\Item.xaml.cs">
       <DependentUpon>Item.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\ItemDetail.xaml.cs">
+      <DependentUpon>ItemDetail.xaml</DependentUpon>
     </Compile>
     <Compile Include="View\Login.xaml.cs">
       <DependentUpon>Login.xaml</DependentUpon>
@@ -152,6 +165,10 @@
       <SubType>Designer</SubType>
     </Page>
     <Page Include="View\Item.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\ItemDetail.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -186,8 +203,14 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
-    <EmbeddedResource Include="Migrations\201910021046515_addmodel.resx">
-      <DependentUpon>201910021046515_addmodel.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\201910040400523_addmodel.resx">
+      <DependentUpon>201910040400523_addmodel.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201910040407241_addcontext.resx">
+      <DependentUpon>201910040407241_addcontext.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201910040417535_addnullablecolumnemployee.resx">
+      <DependentUpon>201910040417535_addnullablecolumnemployee.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

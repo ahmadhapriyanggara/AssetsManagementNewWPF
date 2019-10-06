@@ -22,11 +22,37 @@ namespace Dashboard1.View
     /// </summary>
     public partial class MasterCategory : Window
     {
+        string email;
+        string name;
+        string roles;
         private object item;
-        public MasterCategory()
+        public MasterCategory(string Uemail, string Uname, string Uroles)
         {
             InitializeComponent();
-            
+            GlobalSetter(Uemail, Uname, Uroles);
+            LoadSideNavBar(Uroles);
+        }
+        private void LoadSideNavBar(string RoleId)
+        {
+            if (RoleId == "EMP")
+            {
+                ButtonSupplier.Visibility = Visibility.Collapsed;
+                ButtonItem.Visibility = Visibility.Collapsed;
+                ButtonCategory.Visibility = Visibility.Collapsed;
+            }
+            else if (RoleId == "MAN")
+            {
+                ButtonSupplier.Visibility = Visibility.Collapsed;
+                ButtonItem.Visibility = Visibility.Collapsed;
+                ButtonCategory.Visibility = Visibility.Collapsed;
+            }
+
+        }
+        public void GlobalSetter(string Uemail, string Uname, string Uroles)
+        {
+            email = Uemail;
+            name = Uname;
+            roles = Uroles;
         }
 
         private void DataGrid_Loaded(object sender, RoutedEventArgs e)
@@ -53,21 +79,21 @@ namespace Dashboard1.View
         private void CategoryItem(object sender, RoutedEventArgs e)
         {
             this.Hide();
-            Item item = new Item();
+            Item item = new Item(email, name, roles);
             item.Show();
         }
 
         private void CategoryDashboard(object sender, RoutedEventArgs e)
         {
             this.Hide();
-            Dashboard dashboard = new Dashboard();
+            Dashboard dashboard = new Dashboard(email, name, roles);
             dashboard.Show();
         }
 
         private void CategoryCategory(object sender, RoutedEventArgs e)
         {
             this.Hide();
-            MasterCategory category = new MasterCategory();
+            MasterCategory category = new MasterCategory(email, name, roles);
             category.Show();
         }
 
@@ -132,6 +158,13 @@ namespace Dashboard1.View
 
                 CategoryTextBox.Text = (DataGridCategory.SelectedCells[1].Column.GetCellContent(item) as TextBlock).Text;
             }
+        }
+
+        private void CategorySupplier(object sender, RoutedEventArgs e)
+        {
+            this.Hide();
+            Supplier supplier = new Supplier(email, name, roles);
+            supplier.Show();
         }
     }
 }
